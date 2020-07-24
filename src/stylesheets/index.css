@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: space-around;
+  background-image: url("../assets/background.PNG");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 36px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.roster {
+  font-family: monospace;
+  font-size: 28px;
+  color: white;
+  min-width: 550px;
+  max-width: 880px;
+  min-height: 94px;
+  border: 2px solid black;
+  margin: 0 20px 20px 20px;
+  padding: 10px;
+  background-color: rgba(0, 8, 61, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.charcard {
+
+}
+
+#reroll {
+  background-color: white;
+}
+
+.controlRoster img {
+  box-shadow: 0;
+  transition: box-shadow .2s;
+}
+
+.controlRoster img:hover {
+  box-shadow: 0px 0px 8px 5px #ff0000;
+  position: relative;
+}
+
+.charcard img {
+  width: auto;
+}
+
+.banned {
+  background-color: #ff0000;
+  opacity: 0.5;
+}
+
+.banned > img {
+  opacity: 0.5 !important;
+}
+
+.roster h1 {
+  margin: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controlRoster {
+  min-width: 550px;
+  max-width: 880px;
+  min-height: 94px;
+  border: 2px solid black;
+  margin: 0 20px 20px 20px;
+  padding: 10px;
+  background-color: rgba(96, 0, 1, 0.74);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav{
+  display: flex;
+  width: fit-content;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+nav a {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0 3px 0;
+}
