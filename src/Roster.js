@@ -59,10 +59,17 @@ class Roster extends React.Component {
   banCharater(character, e) {
     const newRoster = this.state.characters;
     // this.setState({ characters: character.checked = false})
-    newRoster[character].checked = false;
-    this.setState({ characters: newRoster })
-    // this.state.characters.character.checked = false;
-    e.target.classList.add('banned');
+    if (newRoster[character].checked) {
+      newRoster[character].checked = false;
+      this.setState({ characters: newRoster })
+      e.target.classList.add('banned');
+    } else {
+      newRoster[character].checked = true;
+      this.setState({ characters: newRoster })
+      e.target.classList.remove('banned');
+    }
+
+    // e.target.classList.add('banned');
   }
 
   makeCharacterTile(character) {
