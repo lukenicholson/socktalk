@@ -1,14 +1,16 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
-import Roster from './Roster.js'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Join from './Join.js'
+import Chat from './Chat.js'
 
 
 
 
 const Root = () => (
-  <BrowserRouter>
-    <Roster />
-  </BrowserRouter>
+  <Router>
+    <Route path="/" exact component={Join} />
+    <Route path="/chat" component={Chat} />
+  </Router>
 );
 
 export default Root;
