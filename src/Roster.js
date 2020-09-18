@@ -87,6 +87,13 @@ class Roster extends React.Component {
 
   }
 
+  changeRosterSize(event) {
+    const target = event.target
+    const num = event.target.value
+    this.setState({ count: num })
+    console.log(event.target.value)
+  }
+
   getImgPath(name) {
     return `${name}.png`
   }
@@ -135,27 +142,74 @@ class Roster extends React.Component {
     // this.setState({ order: picked })
 
     return (
-      <div>
-        <h1>Iron Man Roster</h1>
-        <div className='roster'>
-          {this.state.order.map((char) => (
-
-            <div className='charcard'>
-              <img src={images[this.getImgPath(char)]} />
-            </div>
-          ))
-          }
+      <div className="page">
+        <div className="sidebar">
+          <h1>Iron Man Melee</h1>
+          <p>
+          <br />
+          The "Iron Man Challenge" and its spinoff "Around the World" are popular twists on the classic platform fighter Super Smash Bros Melee, and these formats have been around for over 15 years. To start, two players get a randomly ordered roster and start a match with the character at the top left corner. Typical rules for battle are two stock mode, 2 minutes, all non-healing items items on very high, all non-tournament stages turned on. The winner of the match (or sudden death) gets to move on to the next character. The first person to work their way through the entire roster wins!
+          <br />
+          <br />
+          But what if you don't want to work through the entire roster? Easy. Just use the control roster on the bottom to remove unwanted characters and hit "reroll" when you've adjusted the roster as you see fit.
+          <br />
+          <br />
+          This single page React app has been used by multiple top 100 players for participation in Iron Man Challenges on stream in front of hundreds of people.
+          </p>
         </div>
-        <button id='reroll' onClick={this.shuffle}>REROLL</button>
-        <div className='controlRoster'>
-          {chars.map((char) => (
-            <div onClick={(e)=> {this.banCharater(char, e)}} className='charcard'>
-              <img src={images[this.getImgPath(char)]} />
-            </div>
-          ))
-          }
+        <div className="rosters">
+          {/* <h1>Iron Man Roster</h1> */}
+          <div className='roster'>
+            {this.state.order.map((char) => (
 
+              <div className='charcard'>
+                <img src={images[this.getImgPath(char)]} />
+              </div>
+            ))
+            }
+          </div>
+          <button id='reroll' onClick={this.shuffle}>REROLL</button>
+          {/* <form>
+            <label for="numChars">Chars:</label>
+            <select id="numChars" name="numChars" onChange={this.changeRosterSize}>
+              <option value="25">26</option>
+              <option value="24">25</option>
+              <option value="23">24</option>
+              <option value="22">23</option>
+              <option value="21">22</option>
+              <option value="20">21</option>
+              <option value="19">20</option>
+              <option value="18">19</option>
+              <option value="17">18</option>
+              <option value="16">17</option>
+              <option value="15">16</option>
+              <option value="14">15</option>
+              <option value="13">14</option>
+              <option value="12">13</option>
+              <option value="11">12</option>
+              <option value="10">11</option>
+              <option value="9">10</option>
+              <option value="8">9</option>
+              <option value="7">8</option>
+              <option value="6">7</option>
+              <option value="5">6</option>
+              <option value="4">5</option>
+              <option value="3">4</option>
+              <option value="2">3</option>
+              <option value="1">2</option>
+              <option value="0">1</option>
+            </select>
+          </form> */}
+          <div className='controlRoster'>
+            {chars.map((char) => (
+              <div onClick={(e)=> {this.banCharater(char, e)}} className='charcard'>
+                <img src={images[this.getImgPath(char)]} />
+              </div>
+            ))
+            }
+
+          </div>
         </div>
+
       </div>
     );
   }
